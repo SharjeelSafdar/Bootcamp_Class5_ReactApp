@@ -1,24 +1,14 @@
-import React from 'react';
-import logo from './logo.svg';
+import React, { useState } from 'react';
+import Parent from './Parent';
 import './App.css';
 
 function App() {
+  const [number, set_number] = useState(35);
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <Parent value={number}/>
+      <button onClick={() => set_number(number+1)}>Increment</button>
+      <button onClick={() => set_number(number-1)}>Decrement</button>
     </div>
   );
 }
