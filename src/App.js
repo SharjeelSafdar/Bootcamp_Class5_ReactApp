@@ -9,14 +9,10 @@ function App() {
   return (
     <numberContext.Provider value={[state, dispatch]}>
       <div>
+        <h1>Using Redux with Context API</h1>
         Hello from App component.
         <Parent/>
         Back to App component.
-        <br/>
-        <button onClick={() => dispatch('INCREMENT')}>Increment</button>
-        <button onClick={() => dispatch('DECREMENT')}>Decrement</button>
-        <button onClick={() => dispatch('SQUARE')}>Square</button>
-        <button onClick={() => dispatch('SQUARE_ROOT')}>Square Root</button>
       </div>
     </numberContext.Provider>
   );
