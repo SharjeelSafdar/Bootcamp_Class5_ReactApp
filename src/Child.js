@@ -6,7 +6,7 @@ const Child = () => {
     return (
         <div>
             Hello from Child component.
-            <h1>Value: {value}</h1>
+            <h1>Value: {value[0]}</h1>
             Exiting Child component.
         </div>
     );

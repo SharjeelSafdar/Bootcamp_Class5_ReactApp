@@ -6,7 +6,7 @@ import numberContext from './numberContext';
 function App() {
   const [number, set_number] = useState(33);
   return (
-    <numberContext.Provider value={number}>
+    <numberContext.Provider value={[number, set_number]}>
       <div>
         Hello from App component.
         <Parent value={number}/>
