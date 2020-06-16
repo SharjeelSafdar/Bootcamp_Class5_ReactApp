@@ -1,19 +1,22 @@
-import React, { useState } from 'react';
+import React, { useReducer } from 'react';
 import Parent from './Parent';
 import './App.css';
 import numberContext from './numberContext';
+import number_reducer from './numberReducer';
 
 function App() {
-  const [number, set_number] = useState(33);
+  const [state, dispatch] = useReducer(number_reducer, 66);
   return (
-    <numberContext.Provider value={[number, set_number]}>
+    <numberContext.Provider value={[state, dispatch]}>
       <div>
         Hello from App component.
-        <Parent value={number}/>
+        <Parent/>
         Back to App component.
         <br/>
-        <button onClick={() => set_number(number+1)}>Increment</button>
-        <button onClick={() => set_number(number-1)}>Decrement</button>
+        <button onClick={() => dispatch('INCREMENT')}>Increment</button>
+        <button onClick={() => dispatch('DECREMENT')}>Decrement</button>
+        <button onClick={() => dispatch('SQUARE')}>Square</button>
+        <button onClick={() => dispatch('SQUARE_ROOT')}>Square Root</button>
       </div>
     </numberContext.Provider>
   );
