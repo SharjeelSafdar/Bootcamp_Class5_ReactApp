@@ -1,9 +1,15 @@
-import React from 'react';
+import React, {useContext} from 'react';
+import numberContext from './numberContext';
 
-const Child = ({value}) => (
-    <h1>
-        Value: {value}
-    </h1>
-);
+const Child = () => {
+    const value = useContext(numberContext);
+    return (
+        <div>
+            Hello from Child component.
+            <h1>Value: {value}</h1>
+            Exiting Child component.
+        </div>
+    );
+}
 
 export default Child;
