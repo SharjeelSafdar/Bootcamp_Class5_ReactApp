@@ -1,19 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
 import numberContext from './numberContext';
 import Parent from './Parent';
 
 function App() {
-  const [number, set_number] = useState(22);
+  const value = 33;
   return (
-    <numberContext.Provider value={number}>
+    <numberContext.Provider value={value}>
       <div>
         Hello from App component.
         <Parent></Parent>
         Back to App component.
         <br/>
-        <button onClick={() => set_number(number+1)}>Increment</button>
-        <button onClick={() => set_number(number-1)}>Decrement</button>
+        {/* <button onClick={() => set_number(number+1)}>Increment</button> */}
+        {/* <button onClick={() => set_number(number-1)}>Decrement</button> */}
       </div>
     </numberContext.Provider>
   );
